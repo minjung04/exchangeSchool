@@ -18,4 +18,10 @@ public class SchoolController {
         System.out.println("search page on");
         return "search";
     }
+
+    @GetMapping("/matching")
+    public String matching(Model model){
+        System.out.println("matching page on");
+        return "/matching";
+    }
 }
