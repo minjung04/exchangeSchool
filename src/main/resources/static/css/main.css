@@ -1,0 +1,54 @@
+.img-container{
+    width: 33.3%; /* 각 이미지 컨테이너의 너비를 화면의 1/3로 설정합니다. */
+    height: 950px;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    float: left;
+    /* position: relative; */
+    
+}
+.screen-container{
+    position: absolute;
+    left: 0px;
+}
+.black-screen{
+    width: 33.3%; /* 각 이미지 컨테이너의 너비를 화면의 1/3로 설정합니다. */
+    height: 950px;
+    background-color: rgb(77, 77, 77);
+    opacity: 0.6;
+    display: inline-block;
+    /* position: absolute; */
+    float: left;
+    left: 0px;
+    justify-content : center;
+    align-items : center;
+    display : flex;
+}
+
+.black-screen:hover{
+    cursor: pointer;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+@keyframes slidein{
+    from{
+        opacity: 0.6;
+    }
+    50%{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.6;
+    }
+}
+.black-screen button{
+    text-align: center;
+    opacity: 1;
+    border: 0px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+}
+

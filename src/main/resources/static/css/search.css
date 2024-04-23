@@ -1,0 +1,40 @@
+.header{
+    justify-content : center;
+    align-items : center;
+    display : flex;
+}
+.header span{
+    text-align: center;
+    margin: 30px 60px 30px 30px;
+    cursor: pointer;
+}
+.search-input{
+    justify-content : center;
+    align-items : center;
+    display : flex;
+    /* width: 100px; */
+    margin: 50px;
+}
+.search-input *{
+    text-align: center;
+    
+}
+.items-container{
+    
+    justify-content: center;
+    align-items: center;
+    /* display: block; */
+    width: 100%;
+    border: 1px black solid;
+    height: auto;
+
+}
+.items-container .item-list{
+    text-align: center;
+    display: block;
+    width: 20%;
+    height: 300px;
+    margin: 50px 40px 40px 50px;
+    border: 1px black solid;
+    float:left ;
+}
