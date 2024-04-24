@@ -1,0 +1,79 @@
+.header{
+    justify-content : center;
+    align-items : center;
+    display : flex;
+}
+.header span{
+    text-align: center;
+    margin: 30px 60px 30px 30px;
+    cursor: pointer;
+
+}
+.info-container{
+   margin: 80px 60px 60px 30px;
+}
+.info-container p{
+    margin-bottom: 5%;
+   
+}
+.info-container div{
+    margin-bottom: 3%;
+}
+
+
+/* q */
+.q{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.q p{
+    margin-bottom: 3%;
+
+}
+.q div{
+    text-align: center;
+    justify-content : center;
+    align-items : center;
+    display : flex;
+    margin-bottom: 5%;
+    display: inline-block;
+    margin-right: 4%;
+}
+
+/* gpa container */
+.gpa{
+    text-align: center;
+    justify-content : center;
+    align-items : center;
+    display: flex;
+}
+.gpa-input{
+    display: inline-block;
+    text-align: center;
+    justify-content : center;
+    align-items : center;
+    width: 30%;
+    border: 0;
+    background-color: rgba(219, 219, 219, 0.658);
+    border-radius: 3px;
+    height: 30px;
+
+}
+
+/* 버튼 */
+.btn-container{
+    justify-content : center;
+    align-items : center;
+    display : flex;
+}
+.prebtn{
+    text-align: center;
+    width: 5%;
+    margin-right: 5%;
+    display: none;
+}
+.nextbtn{
+    text-align: center;
+    width: 5%;
+}
