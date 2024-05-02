@@ -60,6 +60,23 @@
     height: 30px;
 
 }
+.grade{
+    text-align: center;
+    justify-content : center;
+    align-items : center;
+    display: flex;
+}
+.grade-input{
+    display: inline-block;
+    text-align: center;
+    justify-content : center;
+    align-items : center;
+    width: 30%;
+    border: 0;
+    background-color: rgba(219, 219, 219, 0.658);
+    border-radius: 3px;
+    height: 30px;
+}
 
 /* 버튼 */
 .btn-container{
@@ -75,5 +92,11 @@
 }
 .nextbtn{
     text-align: center;
+
     width: 5%;
+}
+.resultbtn{
+    text-align: center;
+    /*width: 5%;*/
+    margin-right: 5%;
 }

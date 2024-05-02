@@ -6,7 +6,7 @@
     <!-- Latest compiled JavaScript -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/matching.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
-
+    <script type="text/javascript" th:src="@{/js/matching.js}"></script>
     <title>Document</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
                             <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/>
                         </svg>
                     </span>
-                    <input type="text" class="form-control" placeholder="학번">
+                    <input type="text" class="form-control user_num" value="" placeholder="학번">
                 </div>
                 <div class="input-group w-100">
                     <span class="input-group-text">
@@ -36,7 +36,7 @@
                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                         </svg>
                     </span>
-                    <input type="text" class="form-control" placeholder="사용자 이름">
+                    <input type="text" class="form-control user_name" value="" placeholder="사용자 이름">
                 </div>
             </div>
         </div>
@@ -75,11 +75,11 @@
     <div class="container-fluid q" id="q2" style="display: none">
         <p class="q-p h2">석사 가능 여부를 선택하세요.</p>
         <div class="form-check">
-            <input type="radio" name="master" class="form-check-input" value="true">
+            <input type="radio" name="master" class="form-check-input" value="Y">
             <label class="form-check-label">석사 가능</label>
         </div>
         <div class="form-check">
-            <input type="radio" name="master" class="form-check-input" value="false">
+            <input type="radio" name="master" class="form-check-input" value="N">
             <label class="form-check-label">석사 불가능</label>
         </div>
     </div>
@@ -88,11 +88,11 @@
     <div class="container-fluid q" id="q3" style="display: none">
         <p class="q-p h2">파견 직전학기 휴학 여부를 선택하세요.</p>
         <div class="form-check">
-            <input type="radio" name="loa" class="form-check-input" value="true">
+            <input type="radio" name="loa" class="form-check-input" value="Y">
             <label class="form-check-label">파견 직전학기 휴학 가능</label>
         </div>
         <div class="form-check">
-            <input type="radio" name="loa" class="form-check-input" value="false">
+            <input type="radio" name="loa" class="form-check-input" value="N">
             <label class="form-check-label">파견 직전학기 휴학 불가능</label>
         </div>
     </div>
@@ -101,27 +101,27 @@
     <div class="container-fluid q" id="q4" style="display: none">
         <p class="q-p h2">자신의 TOEFL, TOEIC점수의 CEFR레벨을 선택하고 GPA점수를 입력하세요.</p>
         <div class="form-check">
-            <input type="checkbox" name="level" class="form-check-input" value="A1">
+            <input type="radio" name="level" class="form-check-input" value="A1">
             <label class="form-check-label">A1</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" name="level" class="form-check-input" value="A2">
+            <input type="radio" name="level" class="form-check-input" value="A2">
             <label class="form-check-label">A2</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" name="level" class="form-check-input" value="B1">
+            <input type="radio" name="level" class="form-check-input" value="B1">
             <label class="form-check-label">B1</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" name="level" class="form-check-input" value="B2">
+            <input type="radio" name="level" class="form-check-input" value="B2">
             <label class="form-check-label">B2</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" name="level" class="form-check-input" value="C1">
+            <input type="radio" name="level" class="form-check-input" value="C1">
             <label class="form-check-label">C1</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" name="level" class="form-check-input" value="C2">
+            <input type="radio" name="level" class="form-check-input" value="C2">
             <label class="form-check-label">C2</label>
         </div>
         <form class="input-group gpa">
@@ -132,8 +132,8 @@
 <!--    학점, 어학수업 여부-->
     <div class="container-fluid q" id="q5" style="display: none">
         <p class="q-p h2">자신의 학점을 입력하고 어학수업 제공여부를 선택하세요.</p>
-        <form class="input-group gpa">
-            <input type="text" class="gpa-input" placeholder="학점을 입력하세요">
+        <form class="input-group grade">
+            <input type="text" class="grade-input" placeholder="학점을 입력하세요">
         </form>
         <div class="form-check">
             <input type="radio" name="language_class" class="form-check-input" value="Y">
@@ -148,24 +148,25 @@
     <div class="container-fluid q" id="q6" style="display: none">
         <p class="q-p h2">2024 2학기의 원하는 개강일과 종강일을 선택하세요.<br>* 입력 여부 무관</p>
         <label class="">개강일 : </label>
-        <input type="date" class="">
+        <input type="date" class="fall_start">
 
         <label class="">종강일 : </label>
-        <input type="date" class="">
+        <input type="date" class="fall_end">
     </div>
 <!--2025-1 개강,종강-->
     <div class="container-fluid q" id="q7" style="display: none">
         <p class="q-p h2">2025 1학기의 원하는 개강일과 종강일을 선택하세요.<br>* 입력 여부 무관</p>
         <label class="">개강일 : </label>
-        <input type="date" class="" value="">
+        <input type="date" class="spring_start" value="">
 
         <label class="">종강일 : </label>
-        <input type="date" class="" value="">
+        <input type="date" class="spring_end" value="">
     </div>
 
     <div class="container-fluid btn-container">
-        <button type="button" class="btn btn-outline-success prebtn" style="display: none;">이전</button>
-        <button type="button" class="btn btn-outline-success nextbtn">다음</button>
+        <button type="button" class="btn btn-outline-success prebtn" style="display: none;" onclick="prebtn()">이전</button>
+        <button type="button" class="btn btn-outline-success resultbtn" style="display: none">결과보기</button>
+        <button type="button" class="btn btn-outline-success nextbtn" onclick="nextbtn()">다음</button>
     </div>
 
 </body>
