@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface SchoolMapper {
     List<SchoolDto> getAllInfo();
+    List<SchoolDto> detail(Integer id);
 }

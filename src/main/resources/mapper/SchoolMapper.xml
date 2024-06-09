@@ -5,4 +5,8 @@
     <select id="getAllInfo" resultType="backendClass.exchangeSchool.dto.SchoolDto">
         SELECT * FROM TEST1
     </select>
+
+    <select id="detail" resultType="backendClass.exchangeSchool.dto.SchoolDto" parameterType="Integer">
+            SELECT * FROM TEST1 WEHRE where id = #{id}
+    </select>
 </mapper>

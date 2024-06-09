@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세 페이지</title>
+</head>
+<body>
+<div th:each="list:${details}">
+    <h1 th:text="${list.school}">제목 입니다</h1></br>
+    <span>국가 :</span>
+    <span th:text="${list.country}"></span></br>
+    <span>언어권 :</span>
+    <span th:text="${list.language}"></span></br>
+    <span>학제 :</span>
+    <span th:text="${list.discipline}"></span></br>
+    <span>2024 배정TO :</span>
+    <span th:text="${list.to2024}"></span></br>
+    <span>2025 배정TO :</span>
+    <span th:text="${list.to2025}"></span></br>
+    <span>학교 웹사이트 :</span>
+    <span><a href="${list.website}" th:text="${list.website}"></a></span></br>
+    <span>파견 기간 :</span>
+    <span th:text="${list.period}"></span></br>
+    <span>석사 가능여부 :</span>
+    <span th:text="${list.master_yn}"></span></br>
+    <span>국적 제한 :</span>
+    <span th:text="${list.country_limit}"></span></br>
+    <span>파견 직전학기 휴학가능 :</span>
+    <span th:text="${list.rest_yn}"></span></br>
+    <span>gpa :</span>
+    <span th:text="${list.gpa}"></span>이상</br>
+    <span>프로그램 참고링크 :</span>
+    <span><a th:href="@{${list.class_link}}"></a></span></br>
+    <span>어학수업 제공 여부 :</span>
+    <span th:text="${list.min_grade}"></span></br>
+    <span>최소 학점 :</span>
+    <span th:text="${list.gpa}"></span></br>
+    <span>수업 참고링크 :</span>
+    <span><a th:href="@{${list.class_link}}"></a></span></br>
+    <span>캠퍼스 안 기숙사 유무 :</span>
+    <span th:text="${list.on_campus_yn}"></span></br>
+    <span>캠퍼스 외부 기숙사 유무 :</span>
+    <span th:text="${list.off_campus_yn}"></span></br>
+    <span>2024 2학기 개강일 :</span>
+    <span><a th:text="${list.off_campus_yn}"></a></span></br>
+    <span>2024 2학기 종강일 :</span>
+    <span th:text="${list.end_2024}"></span></br>
+    <span>방학 :</span>
+    <span><a th:text="${list.vacation}"></a></span></br>
+    <span>2025 1학기 개강일 :</span>
+    <span th:text="${list.start_2025}"></span></br>
+    <span>2025 1학기 종강일 :</span>
+    <span><a th:text="${list.end_2025}"></a></span></br>
+</div>
+
+</body>
+</html>

@@ -19,4 +19,9 @@ public class GetService {
 
         return getSchool;
     }
+    public List<SchoolDto> getDetail(Integer id){
+        List<SchoolDto> detail =mapper.detail(id);
+        System.out.println(detail);
+        return detail;
+    }
 }

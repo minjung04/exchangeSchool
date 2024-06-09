@@ -6,6 +6,7 @@
     <!-- Latest compiled JavaScript -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/search.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     <title>Document</title>
 </head>
@@ -24,44 +25,18 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-4 my-4">
+        <div class="col-sm-4 my-4" th:each="list : ${allSchool}">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">학교 이름</h5>
-                    <p class="card-text">학교 위치</p>
-                    <p class="card-text">기타 내용</p>
-                    <p class="card-text">기타 내용</p>
-                    <p class="card-text">기타 내용</p>
-                    <a href="#" class="btn btn-primary">홈페이지 보기</a>
+                    <h5 class="card-title" th:text="${list.getSchool}">학교 이름</h5>
+                    <p class="card-text" th:text="${list.getCountry}">학교 위치</p>
+                    <p class="card-text" th:text="${list.discipline}">discipline</p>
+                    <p class="card-text" th:text="${list.period}">period</p>
+                    <a href="#" class="btn btn-primary" th:getId="${list.website}">홈페이지 보기</a>
+                    <a class="btn btn-primary" th:href="@{/detail(id=${list.id})}" th:getId="${list.id}" id="infoId" name="infoId">더보기</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 my-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">학교 이름</h5>
-                    <p class="card-text">학교 위치</p>
-                    <p class="card-text">기타 내용</p>
-                    <p class="card-text">기타 내용</p>
-                    <p class="card-text">기타 내용</p>
-                    <a href="#" class="btn btn-primary">홈페이지 보기</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 my-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">학교 이름</h5>
-                    <p class="card-text">학교 위치</p>
-                    <p class="card-text">기타 내용</p>
-                    <p class="card-text">기타 내용</p>
-                    <p class="card-text">기타 내용</p>
-                    <a href="#" class="btn btn-primary">홈페이지 보기</a>
-                </div>
-            </div>
-        </div>
-
-
     </div>
 </body>
 </html>
