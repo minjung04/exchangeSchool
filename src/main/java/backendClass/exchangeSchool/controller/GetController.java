@@ -70,9 +70,11 @@ public class GetController {
 
     @PostMapping("/matchingResult")
     public String matchingResult(Model model, UserInfoDto userInfoDto){
+        getService.setUserInfo(userInfoDto); //유저 데이터 저장
+        model.addAttribute("match",getService.matchingInfo(userInfoDto));
         System.out.println("userinfoDto ::: "+ userInfoDto);
-        System.out.println("matching");
-        return "";
+
+        return "matchingResult";
     }
         /*@GetMapping("/goWebSite")
     public String goWebSite(@RequestParam(value = "url",defaultValue = "") String url){

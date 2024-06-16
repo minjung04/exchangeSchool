@@ -7,10 +7,30 @@
     </select>
 
     <select id="detail" resultType="backendClass.exchangeSchool.dto.SchoolDto" parameterType="Integer">
-            SELECT * FROM TEST1 WEHRE where id = #{id}
+            SELECT * FROM TEST1 WHERE where id = #{id}
     </select>
 
     <select id="searchInfo" resultType="backendClass.exchangeSchool.dto.SchoolDto" parameterType="String">
         SELECT id, SCHOOL, COUNTRY, DISCIPLINE, PERIOD, WEBSITE FROM TEST1 WHERE SCHOOL LIKE CONCAT('%', #{kw}, '%')
+    </select>
+
+    <insert id="setUserInfo" parameterType="backendClass.exchangeSchool.dto.UserInfoDto">
+        insert into userinfo(user_name, user_num, language, master_yn, rest_yn, grade, language_class_yn, gpa, spring_start, spring_end, fall_start, fall_end)
+        values (#{user_name},#{user_num},#{language},#{master_yn},#{rest_yn},#{grade},#{language_class_yn},#{gpa},#{spring_start},#{spring_end},#{fall_start},#{fall_end});
+    </insert>
+
+    <select id="matchResult" resultType="backendClass.exchangeSchool.dto.SchoolDto" parameterType="backendClass.exchangeSchool.dto.UserInfoDto">
+        SELECT *
+        FROM TEST1
+        WHERE language = #{language}
+        AND master_yn = #{masterYn}
+        AND rest_yn = #{restYn}
+        AND grade = #{grade}
+        AND language_class_yn = #{languageClassYn}
+        AND gpa >= #{minGpa}
+        AND springStart <= #{springStart}
+        AND springEnd >= #{springEnd}
+        AND fallStart <= #{fallStart}
+        AND fallEnd >= #{fallEnd}
     </select>
 </mapper>

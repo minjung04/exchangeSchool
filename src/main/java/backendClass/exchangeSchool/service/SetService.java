@@ -13,9 +13,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SetService {
     private final SchoolMapper mapper;
-    public int setInfo(UserInfoDto dto){
-        System.out.println(dto.getGpa());
-        return 1;
-    }
+//    public int setInfo(UserInfoDto dto){
+//        System.out.println("dto :::"+dto);
+//
+//        return 1;
+//    }
 
 }

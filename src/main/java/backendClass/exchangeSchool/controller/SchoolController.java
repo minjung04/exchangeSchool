@@ -29,11 +29,11 @@ public class SchoolController {
     private static final Logger logger = LoggerFactory.getLogger(GetController.class);
 
 
-    @PostMapping("/setInfo") //데이터 저장 컨트롤러
+    /*@PostMapping("/setInfo") //데이터 저장 컨트롤러
     public int setInfo(@RequestBody UserInfoDto dto){
         System.out.println("setinfo controller");
         return setService.setInfo(dto);
-    }
+    }*/
 
 
 }

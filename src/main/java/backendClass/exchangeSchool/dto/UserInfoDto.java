@@ -16,16 +16,16 @@ public class UserInfoDto {
     private String grade;
     private String language_class_yn;
     private String gpa;
-    private String springStart;
-    private String springEnd;
-    private String fallStart;
-    private String fallEnd;
-    @Override
+    private String spring_start;
+    private String spring_end;
+    private String fall_start;
+    private String fall_end;
+    /*@Override
     public String toString() {
         return "userForm{" +
                 "user='" + user_name + '\'' +
                 "master_yn='" + master_yn + '\'' +
                 "language='" + language + '\'' +
                 '}';
-    }
+    }*/
 }

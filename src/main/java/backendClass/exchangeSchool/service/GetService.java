@@ -1,9 +1,11 @@
 package backendClass.exchangeSchool.service;
 
 import backendClass.exchangeSchool.dto.SchoolDto;
+import backendClass.exchangeSchool.dto.UserInfoDto;
 import backendClass.exchangeSchool.mapper.SchoolMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.List;
 
@@ -29,5 +31,14 @@ public class GetService {
         System.out.println("kw :::" + kw);
         List<SchoolDto> searchInfo = mapper.searchInfo(kw);
         return searchInfo;
+    }
+
+    public int setUserInfo(UserInfoDto infoDto){
+        return mapper.setUserInfo(infoDto);
+    }
+
+    public List<SchoolDto> matchingInfo(UserInfoDto infoDto){
+        List<SchoolDto> matchingInfo = mapper.matchResult(infoDto);
+        return matchingInfo;
     }
 }
