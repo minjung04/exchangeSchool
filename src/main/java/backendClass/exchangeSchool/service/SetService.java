@@ -18,8 +18,4 @@ public class SetService {
         return 1;
     }
 
-    public List<SchoolDto> detail(int id){
-        List<SchoolDto> detail = mapper.detail(id);
-        return detail;
-    }
 }

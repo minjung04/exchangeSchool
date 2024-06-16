@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled JavaScript -->
+  <link rel="stylesheet" type="text/css" th:href="@{/css/search.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+<div class="container-fluid header h5 border">
+  <span><a th:href="@{/}">서비스 소개</a></span>
+  <span><a th:href="@{/search}">학교 조회</a></span>
+  <span><a th:href="@{/matching}">학교 매칭</a></span>
+</div>
+<form action="/searchResult" method="get" class="form">
+  <div class="container search-input w-50 ">
+    <div class="input-group d-flex justify-content-center ">
+      <input type="text" class="form-control" placeholder="학교를 검색하세요." id="kw" name="kw">
+      <button type="submit" class="btn btn-outline-success btn-sm"><a>검색</a></button>
+    </div>
+  </div>
+</form>
+
+</div>
+
+<div class="row">
+  <div class="col-sm-4 my-4" th:each="list:${info}">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" th:text="${list.school}">학교 이름</h5>
+        <p class="card-text" th:text="${list.country}">학교 위치</p>
+        <p class="card-text" th:text="${list.discipline}">discipline</p>
+        <p class="card-text" th:text="${list.period}">period</p>
+        <a href="#" class="btn btn-primary" >홈페이지 보기</a>
+        <a class="btn btn-primary" th:href="@{/detail(id=${list.id})}" th:getId="${list.id}">더보기</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

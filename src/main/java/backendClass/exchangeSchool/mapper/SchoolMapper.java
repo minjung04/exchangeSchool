@@ -9,4 +9,5 @@ import java.util.List;
 public interface SchoolMapper {
     List<SchoolDto> getAllInfo();
     List<SchoolDto> detail(Integer id);
+    List<SchoolDto> searchInfo(String kw);
 }

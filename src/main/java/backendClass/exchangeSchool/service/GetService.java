@@ -24,4 +24,10 @@ public class GetService {
         System.out.println(detail);
         return detail;
     }
+
+    public List<SchoolDto> searchInfo(String kw){
+        System.out.println("kw :::" + kw);
+        List<SchoolDto> searchInfo = mapper.searchInfo(kw);
+        return searchInfo;
+    }
 }

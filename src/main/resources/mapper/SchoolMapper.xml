@@ -9,4 +9,8 @@
     <select id="detail" resultType="backendClass.exchangeSchool.dto.SchoolDto" parameterType="Integer">
             SELECT * FROM TEST1 WEHRE where id = #{id}
     </select>
+
+    <select id="searchInfo" resultType="backendClass.exchangeSchool.dto.SchoolDto" parameterType="String">
+        SELECT id, SCHOOL, COUNTRY, DISCIPLINE, PERIOD, WEBSITE FROM TEST1 WHERE SCHOOL LIKE CONCAT('%', #{kw}, '%')
+    </select>
 </mapper>

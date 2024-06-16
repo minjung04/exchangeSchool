@@ -17,135 +17,135 @@
         <span><a th:href="@{/search}">학교 조회</a></span>
         <span><a th:href="@{/matching}">학교 매칭</a></span>
     </div>
-
-    <!-- 정보입력 -->
-    <div class="container info-container text-center" id="q1">
-        <p class="h2">교환학교 매칭을 시작합니다.</p>
-        <div class="row justify-content-center">
-            <div class="col-md-3">
-                <div class="input-group w-100">
-                    <span class="input-group-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
-                            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"/>
-                            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/>
-                        </svg>
-                    </span>
-                    <input type="text" class="form-control user_num" value="" placeholder="학번">
-                </div>
-                <div class="input-group w-100">
-                    <span class="input-group-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                        </svg>
-                    </span>
-                    <input type="text" class="form-control user_name" value="" placeholder="사용자 이름">
+    <form action="matchingResult" method="post">
+        <!-- 정보입력 -->
+        <div class="container info-container text-center" id="q1">
+            <p class="h2">교환학교 매칭을 시작합니다.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="input-group w-100">
+                        <span class="input-group-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
+                                <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917z"/>
+                                <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466z"/>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control user_num" value="" placeholder="학번" name="user_num">
+                    </div>
+                    <div class="input-group w-100">
+                        <span class="input-group-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control user_name" value="" placeholder="사용자 이름" name="user_name">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- 언어권 선택 -->
-    <div class="container-fluid q" id="q2" style="display: none">
-        <p class="q-p h2">원하는 언어권을 선택하세요.</p>
-        <div class="form-check">
-            <input type="checkbox" name="lang" class="form-check-input" value="europe">
-            <label class="form-check-label">유럽</label>
+        <!-- 언어권 선택 -->
+        <div class="container-fluid q" id="q2" style="display: none">
+            <p class="q-p h2">원하는 언어권을 선택하세요.</p>
+            <div class="form-check">
+                <input type="checkbox" name="language" class="form-check-input" value="europe">
+                <label class="form-check-label">유럽</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="language" class="form-check-input" value="american">
+                <label class="form-check-label">영미</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="language" class="form-check-input" value="asia">
+                <label class="form-check-label">아시아</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="language" class="form-check-input" value="chaina">
+                <label class="form-check-label">중국</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="lang" class="form-check-input" value="japan">
+                <label class="form-check-label">일본</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="lang" class="form-check-input" value="etc">
+                <label class="form-check-label">기타</label>
+            </div>
         </div>
-        <div class="form-check">
-            <input type="checkbox" name="lang" class="form-check-input" value="american">
-            <label class="form-check-label">영미</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="lang" class="form-check-input" value="asia">
-            <label class="form-check-label">아시아</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="lang" class="form-check-input" value="chaina">
-            <label class="form-check-label">중국</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="lang" class="form-check-input" value="japan">
-            <label class="form-check-label">일본</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="lang" class="form-check-input" value="etc">
-            <label class="form-check-label">기타</label>
-        </div>
-    </div>
 
-    <!-- 석사가능여부 선택 -->
-    <div class="container-fluid q" id="q3" style="display: none">
-        <p class="q-p h2">석사 가능 여부를 선택하세요.</p>
-        <div class="form-check">
-            <input type="radio" name="master" class="form-check-input" value="Y">
-            <label class="form-check-label">석사 가능</label>
+        <!-- 석사가능여부 선택 -->
+        <div class="container-fluid q" id="q3" style="display: none">
+            <p class="q-p h2">석사 가능 여부를 선택하세요.</p>
+            <div class="form-check">
+                <input type="radio" name="master_yn" class="form-check-input" value="Y">
+                <label class="form-check-label">석사 가능</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="master_yn" class="form-check-input" value="N">
+                <label class="form-check-label">석사 불가능</label>
+            </div>
         </div>
-        <div class="form-check">
-            <input type="radio" name="master" class="form-check-input" value="N">
-            <label class="form-check-label">석사 불가능</label>
-        </div>
-    </div>
 
-    <!-- 파견 직전학기 휴학 여부 선택 -->
-    <div class="container-fluid q" id="q4" style="display: none">
-        <p class="q-p h2">파견 직전학기 휴학 여부를 선택하세요.</p>
-        <div class="form-check">
-            <input type="radio" name="loa" class="form-check-input" value="Y">
-            <label class="form-check-label">파견 직전학기 휴학 가능</label>
+        <!-- 파견 직전학기 휴학 여부 선택 -->
+        <div class="container-fluid q" id="q4" style="display: none">
+            <p class="q-p h2">파견 직전학기 휴학 여부를 선택하세요.</p>
+            <div class="form-check">
+                <input type="radio" name="rest_yn" class="form-check-input" value="Y">
+                <label class="form-check-label">파견 직전학기 휴학 가능</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="rest_yn" class="form-check-input" value="N">
+                <label class="form-check-label">파견 직전학기 휴학 불가능</label>
+            </div>
         </div>
-        <div class="form-check">
-            <input type="radio" name="loa" class="form-check-input" value="N">
-            <label class="form-check-label">파견 직전학기 휴학 불가능</label>
+
+        <!--지원자격,gpa  선택 -->
+        <div class="container-fluid q" id="q5" style="display: none">
+            <p class="q-p h2">자신의 GPA점수를 입력하세요.</p>
+            <div class="input-group gpa" >
+                <input type="text" class="gpa-input" placeholder="gpa점수를 입력하세요" name="gpa">
+            </div>
         </div>
-    </div>
 
-    <!--지원자격,gpa  선택 -->
-    <div class="container-fluid q" id="q5" style="display: none">
-        <p class="q-p h2">자신의 GPA점수를 입력하세요.</p>
-        <div class="input-group gpa" >
-            <input type="text" class="gpa-input" placeholder="gpa점수를 입력하세요">
+    <!--    학점, 어학수업 여부-->
+        <div class="container-fluid q" id="q6" style="display: none">
+            <p class="q-p h2">자신의 학점을 입력하고 어학수업 제공여부를 선택하세요.</p>
+            <div class="input-group grade">
+                <input type="text" class="grade-input" placeholder="학점을 입력하세요">
+            </div>
+            <div class="form-check">
+                <input type="radio" name="language_class_yn" class="form-check-input" value="Y">
+                <label class="form-check-label">어학수업 제공</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="language_class_yn" class="form-check-input" value="N">
+                <label class="form-check-label">어학수업 미제공</label>
+            </div>
         </div>
-    </div>
+    <!--2024-2 개강,종강-->
+        <div class="container-fluid q" id="q7" style="display: none">
+            <p class="q-p h2">2024 2학기의 원하는 개강일과 종강일을 선택하세요.<br>* 입력 여부 무관</p>
+            <label class="">개강일 : </label>
+            <input type="date" class="fall_start">
 
-<!--    학점, 어학수업 여부-->
-    <div class="container-fluid q" id="q6" style="display: none">
-        <p class="q-p h2">자신의 학점을 입력하고 어학수업 제공여부를 선택하세요.</p>
-        <div class="input-group grade">
-            <input type="text" class="grade-input" placeholder="학점을 입력하세요">
+            <label class="">종강일 : </label>
+            <input type="date" class="fall_end">
         </div>
-        <div class="form-check">
-            <input type="radio" name="language_class" class="form-check-input" value="Y">
-            <label class="form-check-label">어학수업 제공</label>
+    <!--2025-1 개강,종강-->
+        <div class="container-fluid q" id="q8" style="display: none">
+            <p class="q-p h2">2025 1학기의 원하는 개강일과 종강일을 선택하세요.<br>* 입력 여부 무관</p>
+            <label class="">개강일 : </label>
+            <input type="date" class="spring_start" value="">
+
+            <label class="">종강일 : </label>
+            <input type="date" class="spring_end" value="">
         </div>
-        <div class="form-check">
-            <input type="radio" name="language_class" class="form-check-input" value="N">
-            <label class="form-check-label">어학수업 미제공</label>
+
+        <div class="container-fluid btn-container">
+            <button type="button" class="btn btn-outline-success prebtn" style="display: none;" onclick="prebtn()">이전</button>
+            <button type="submit" class="btn btn-outline-success resultbtn" style="display: none" ><a>결과보기</a></button>
+            <button type="button" class="btn btn-outline-success nextbtn" onclick="nextbtn()">다음</button>
         </div>
-    </div>
-<!--2024-2 개강,종강-->
-    <div class="container-fluid q" id="q7" style="display: none">
-        <p class="q-p h2">2024 2학기의 원하는 개강일과 종강일을 선택하세요.<br>* 입력 여부 무관</p>
-        <label class="">개강일 : </label>
-        <input type="date" class="fall_start">
-
-        <label class="">종강일 : </label>
-        <input type="date" class="fall_end">
-    </div>
-<!--2025-1 개강,종강-->
-    <div class="container-fluid q" id="q8" style="display: none">
-        <p class="q-p h2">2025 1학기의 원하는 개강일과 종강일을 선택하세요.<br>* 입력 여부 무관</p>
-        <label class="">개강일 : </label>
-        <input type="date" class="spring_start" value="">
-
-        <label class="">종강일 : </label>
-        <input type="date" class="spring_end" value="">
-    </div>
-
-    <div class="container-fluid btn-container">
-        <button type="button" class="btn btn-outline-success prebtn" style="display: none;" onclick="prebtn()">이전</button>
-        <button type="button" class="btn btn-outline-success resultbtn" style="display: none" onclick="resultbtn()"><a th:href="@{/result}">결과보기</a></button>
-        <button type="button" class="btn btn-outline-success nextbtn" onclick="nextbtn()">다음</button>
-    </div>
-
+    </form>
 </body>
 </html>

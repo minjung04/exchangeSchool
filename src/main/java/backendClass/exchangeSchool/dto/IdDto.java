@@ -9,4 +9,5 @@ import lombok.ToString;
 @Getter
 public class IdDto {
     private Integer id;
+    private String kw;
 }

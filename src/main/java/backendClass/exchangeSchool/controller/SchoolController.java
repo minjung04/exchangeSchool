@@ -35,10 +35,5 @@ public class SchoolController {
         return setService.setInfo(dto);
     }
 
-    @RequestMapping("/goWebSite")
-    public int goWebSite(@RequestBody SchoolDto dto){
-        return 0;
-    }
-
 
 }

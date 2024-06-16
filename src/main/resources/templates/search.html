@@ -7,7 +7,13 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/search.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        function search(){
+            var kw = $('#kw').val();
+            console.log(kw);
 
+        }
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -16,13 +22,14 @@
         <span><a th:href="@{/search}">학교 조회</a></span>
         <span><a th:href="@{/matching}">학교 매칭</a></span>
     </div>
-    <div class="container search-input w-50 ">
-        <div class="input-group d-flex justify-content-center ">
-            <input type="text" class="form-control" placeholder="학교를 검색하세요.">
-            <button type="button" class="btn btn-outline-success btn-sm">검색</button>
+    <form action="/searchResult" method="get" class="form">
+        <div class="container search-input w-50 ">
+            <div class="input-group d-flex justify-content-center ">
+                    <input type="text" class="form-control" placeholder="학교를 검색하세요." id="kw" name="kw">
+                    <button type="submit" class="btn btn-outline-success btn-sm"><a>검색</a></button>
+            </div>
         </div>
-        
-    </div>
+    </form>
 
     <div class="row">
         <div class="col-sm-4 my-4" th:each="list : ${allSchool}">
@@ -32,7 +39,7 @@
                     <p class="card-text" th:text="${list.getCountry}">학교 위치</p>
                     <p class="card-text" th:text="${list.discipline}">discipline</p>
                     <p class="card-text" th:text="${list.period}">period</p>
-                    <a href="#" class="btn btn-primary" th:getId="${list.website}">홈페이지 보기</a>
+                    <a href="#" class="btn btn-primary" th:url="${list.website}" th:href="@{/goWebSite}">홈페이지 보기</a>
                     <a class="btn btn-primary" th:href="@{/detail(id=${list.id})}" th:getId="${list.id}" id="infoId" name="infoId">더보기</a>
                 </div>
             </div>
